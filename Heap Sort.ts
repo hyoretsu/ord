@@ -1,4 +1,4 @@
-import swap from '../swap';
+import swap from './swap';
 
 const heapify = (array: number[]): void => {
     array.forEach((element, i) => {

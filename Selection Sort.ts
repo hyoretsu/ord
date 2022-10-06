@@ -1,3 +1,6 @@
+/**
+ * Varre o array e substitui o índice atual pelo que for menor dos restantes.
+ */
 export const selectionSort = (array: number[]): number[] => {
     array.forEach((element, i) => {
         let smallestIndex = i;

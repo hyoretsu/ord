@@ -1,0 +1,33 @@
+Bubble sort O(n²)
+1. Checa se o próximo é menor que o atual
+2. Se sim, troca e vai para o próximo
+3. Repete até o array acabar
+4. Repete o processo, terminando 1 casa antes, até estar ordenado
+5. Caso não troque nenhuma vez, o array já está ordenado
+
+Heap sort O(n * log(n))
+1. Transforma em heap
+2. Joga a raiz para o final do array e vai trocando se o pai (índice trocado) for menor que o maior filho
+
+Insertion sort O(n²)
+1. Dividimos o array em 2 partes: ordenada e desordenada
+2. Vamos checando o array da direita para a esquerda, a partir do primeiro membro desordenado, inserindo-o antes do membro do qual ele é menor
+
+Merge sort O(n * log(n))
+1. Separa o array em 2 metades, recursivamente até ser unitário
+2. Junta essas duas metades, em ordem crescente
+
+Quicksort O(n²) pior ou O(n * log(n))
+1. Pega o último elemento
+2. Joga os menores pra esquerda e os maiores pra direita
+3. Repete com cada parte (maiores e menores)
+
+Selection sort O(n²)
+1. Varre o array em busca do menor membro
+2. Substitui o índice atual pelo menor e repete
+
+Shellsort O(n²) pior ou O(n * log(n))
+1. Considere J como números (primos e 1) menores que o tamanho do array, do maior para o menor
+2. Compare o número no índice J com o índice J - J e troque-os se o da direita for menor que o da esquerda
+3. Vá adicionando 1 aos índices e compare, até terminar o array
+4. Repita para cada número de J
