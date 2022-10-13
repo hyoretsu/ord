@@ -11,6 +11,7 @@ const getPrimes = (n: number): number[] => {
 };
 
 export const shellsort = (array: number[]): number[] => {
+    // const gaps = [1, 4, 10, 23, 57, 132, 301, 701]; // Ciura's sequence, most optimal by experimentation
     const gaps = [1, ...getPrimes(array.length)];
 
     gaps.reverse().forEach(gap => {
