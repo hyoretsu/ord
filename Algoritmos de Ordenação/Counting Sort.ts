@@ -1,41 +1,36 @@
-// Counting Sort O(n)
-// cria uma array de contagem
-// Guarda a quantidade de cada arr[i] = i
-// Faz a frequência acumulada deles
-// Lê o array original de trás pra frente, coloca no índice da frequência acumulada e subtrai 1
-
-// Radix Sort O(n * log(n)
-// - Serve para string
-
-// Bucket Sort O(n)
-// - Valores entre 0 e 1, decimais
-// - Valores bem distribuidos (Distribuição normal)
-// - Usa um outro algoritmo, simples (insertion sort)
-
-// 2022-11-1
-
 /**
+ * Counting Sort O(n)
+ *
  * Não pode ter número negativo.
  * Aconselhável não usar com números muito grandes.
  */
 export const countingSort = (arr: number[]): number[] => {
-    const count: number[] = [], result: number[] = [];
+    const count: number[] = [];
+    const result: number[] = [];
 
+    // 1. Cria um array de contagem para cada número, guardando-a em seu índice (arr[i] = j)
     arr.forEach(number => {
+        if (number < 0) {
+            throw new Error("Counting sort doesn't support negative numbers");
+        }
+
         count[number] = (count[number] || 0) + 1;
-    })
+    });
 
-    console.log(count)
-
-    count.forEach((number, i) => {
-        console.log([(number || 0),(count[i - 1] || 0)])
-
-        count[i] = (number || 0) + (count[i - 1] || 0);
-    })
-
-    console.log(count)
-
-    arr.reverse().forEach(()=>{
-        result[--count[arr.pop()]] = arr.pop();
+    // 2. Faz a frequência acumulada deles
+    for (let i = 0; i < count.length; i++) {
+        count[i] = (count[i] || 0) + (count[i - 1] || 0);
     }
+
+    // 3. Lê o array original de trás pra frente
+
+    arr.reverse().forEach(number => {
+        // 4. Coloca o número atual no índice da frequência acumulada
+        result[count[number] - 1] = number;
+
+        // Subtrai a frequência acumulada por 1
+        count[number] -= 1;
+    });
+
+    return result;
 };

@@ -1,11 +1,12 @@
 // Pega o pivot, joga os menores pra esquerda, os maiores para a direita, e recursão
 export const quicksort = (array: number[]): number[] => {
     if (array.length <= 1) {
-      return array;
+        return array;
     }
 
     const pivot = array[array.length - 1];
-    const left: number[] = [], right: number[] = [];
+    const left: number[] = [];
+    const right: number[] = [];
 
     for (let i = 0; i < array.length - 1; i++) {
         if (array[i] < pivot) {
@@ -16,4 +17,4 @@ export const quicksort = (array: number[]): number[] => {
     }
 
     return [...quicksort(left), pivot, ...quicksort(right)];
-  };
+};
