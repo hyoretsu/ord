@@ -22,3 +22,19 @@ Passa um ponteiro em cada fita de dados, e realiza Merge Sort até o fim de cada
 ## Intercalação polifásica
 
 Quando alguma fita fica vazia, a saída vira a entrada.
+
+## Por seleção
+
+Lê o arquivo em um heap de mínimo.
+
+Bloco = quantidade de elementos que cabem na memória
+
+Retira a raiz e bota na fita, pega outro elemento do arquivo e coloca no lugar da raiz.
+
+Se o elemento for menor, inverte a marcação e reconstrói o heap.
+
+Marcação = o que for diferente do atual é maior que todos os outros elementos e comparáveis entre si.
+
+O novo bloco começa quando um valor com marcação diferente da atual sai da raiz.
+
+Intercala na fita restante. A fita vazia vira a saída e os blocos que restam.
